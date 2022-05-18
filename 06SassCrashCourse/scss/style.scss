@@ -1,0 +1,92 @@
+/* Can set any css value into a variable */
+/* Variables in partial _config.scss *//* Don't touch css when using sass */ 
+@import 'config';
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-color;
+    font-family: $font-stack;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.showcase {
+    // background-color: $primary-color;
+    // color: set-text-color($primary-color);
+    @include set-background($primary-color);
+    height: 600px;
+    
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        li{
+            padding: 16px;
+        }
+
+        a{
+            color: set-text-color($primary-color);
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: $secondary-color;
+        }
+    }
+
+    
+
+    &-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        p{
+            margin: 20px 0;
+        }
+
+        a{
+            color: set-text-color($primary-color);
+            text-decoration: none;
+        }
+
+    }
+
+}
+
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';
+
